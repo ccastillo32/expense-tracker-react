@@ -1,4 +1,11 @@
+import { useContext } from "react";
+import { GlobalContext } from "../context/GlobalContext";
+
 const Balance = () => {
+
+    const context = useContext(GlobalContext);
+
+    console.log( context );
 
     return (
         <div>

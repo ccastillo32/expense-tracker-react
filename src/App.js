@@ -1,9 +1,10 @@
 import Balance from "./components/Balance";
 import Header from "./components/Header";
+import { GlobalProvider } from "./context/GlobalContext";
 
 function App() {
   return (
-    <div>
+    <GlobalProvider>
       
       <Header />
       
@@ -11,7 +12,7 @@ function App() {
         <Balance />
       </div>
 
-    </div>
+    </GlobalProvider>
   );
 }
 
