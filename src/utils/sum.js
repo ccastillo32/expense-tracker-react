@@ -1,5 +1,5 @@
-const sum = (amounts) => {
-    return amounts.reduce((a,b) => (a + b), 0);
+const sum = (transactions) => {
+    return transactions.map(tx => tx.amount).reduce((a,b) => (a + b), 0);
 }
 
 export { sum }
