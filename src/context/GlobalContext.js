@@ -1,5 +1,5 @@
 import { createContext, useReducer } from "react";
-import TransactionsReducer from "../reducers/AppReducer";
+import TransactionsReducer from "../reducers/TransactionsReducer";
 
 const GlobalContext = createContext();
 
@@ -16,9 +16,9 @@ const GlobalProvider = ({ children }) => {
 
     return (
         <GlobalContext.Provider
-            value={
-                { transactions: state.transactions }
-            }>
+            value={{  
+                transactions: state.transactions   
+            }}>
             { children }
         </GlobalContext.Provider>
     );

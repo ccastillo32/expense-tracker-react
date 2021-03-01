@@ -1,6 +1,6 @@
 const TransactionsReducer = (state, action) => {
 
-    switch(action.type) {
+    switch(action.type) { 
         default: 
             return state;
     }
