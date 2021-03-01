@@ -1,5 +1,6 @@
 import Balance from "./components/Balance";
 import Header from "./components/Header";
+import IncomeExpensesSummary from "./components/IncomeExpensesSummary";
 import { GlobalProvider } from "./context/GlobalContext";
 
 function App() {
@@ -10,6 +11,7 @@ function App() {
       
       <div className="container">
         <Balance />
+        <IncomeExpensesSummary />
       </div>
 
     </GlobalProvider>
