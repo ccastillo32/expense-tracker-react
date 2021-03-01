@@ -1,25 +1,13 @@
-import { useContext, useEffect, useState } from "react";
+import { useContext } from "react";
 import { GlobalContext } from "../context/GlobalContext";
+import { calculateBalance } from "../utils/calculateBalance";
+import { displayNumber } from "../utils/displayNumber";
 
 const Balance = () => {
 
     const context = useContext(GlobalContext);
     const { transactions } = context;
-
-    const [ balance, setBalance ] = useState(0);
-
-    useEffect(() => {
-        setBalance( calculateBalance(transactions) );
-    }, [transactions]);
-
-    const calculateBalance = (allTransactions) => {
-        return allTransactions.map( tx => tx.type === 'expense' ? (tx.amount * -1) : tx.amount)
-                              .reduce((a,b) => a + b, 0);
-    }
-
-    const displayNumber = (value) => {
-        return value >= 0 ? `$${value}` : `-$${ Math.abs(value) }`
-    } 
+    const balance = calculateBalance( transactions );
 
     return (
         <div>
