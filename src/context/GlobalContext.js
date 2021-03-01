@@ -1,5 +1,6 @@
 import { createContext, useReducer } from "react";
 import TransactionsReducer from "../reducers/TransactionsReducer";
+import { calculateBalance } from "../utils/calculateBalance";
 
 const GlobalContext = createContext();
 
@@ -14,10 +15,15 @@ const GlobalProvider = ({ children }) => {
 
     const [ state ] = useReducer(TransactionsReducer, initialState);
 
+    const getTotalBalance = () => {
+        return calculateBalance(state.transactions);
+    }
+
     return (
         <GlobalContext.Provider
             value={{  
-                transactions: state.transactions   
+                transactions: state.transactions,
+                getTotalBalance  
             }}>
             { children }
         </GlobalContext.Provider>
