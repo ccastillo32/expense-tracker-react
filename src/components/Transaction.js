@@ -9,10 +9,10 @@ const Transaction = ({ transaction }) => {
     const { id, type, text, amount } = transaction;
     const isExpense = type === 'expense';
 
-    const deleteTransaction = (id) => {
+    const deleteTransaction = (transactionId) => {
         dispatch({ 
             type: types.DELETE_TRANSACTION, 
-            payload: { id }
+            payload: { id: transactionId }
         });
     }
 

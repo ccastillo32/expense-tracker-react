@@ -12,6 +12,14 @@ const TransactionList = () => {
             <ul className="list">
 
                 {
+                    transactions.length === 0 &&
+                    <li>No transactions</li>
+                }
+
+                {
+
+                    transactions.length > 0 &&
+
                     transactions.map(tx => (
                         <Transaction key={ tx.id } transaction={ tx } />
                     ))
