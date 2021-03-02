@@ -12,12 +12,13 @@ const initialState = {
 
 const GlobalProvider = ({ children }) => {
 
-    const [ state ] = useReducer(TransactionsReducer, initialState);
+    const [ state, dispatch ] = useReducer(TransactionsReducer, initialState);
 
     return (
         <GlobalContext.Provider
             value={{  
-                transactions: state.transactions
+                transactions: state.transactions,
+                dispatch
             }}>
             { children }
         </GlobalContext.Provider>

@@ -1,5 +1,5 @@
 const types = {
-    GET_BALANCE: 'GET_BALANCE'
+    DELETE_TRANSACTION: 'DELETE_TRANSACTION'
 };
 
 export { types }
