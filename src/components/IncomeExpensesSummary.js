@@ -1,12 +1,13 @@
 import { useContext } from "react";
 import { GlobalContext } from "../context/GlobalContext";
 import { displayNumber } from "../utils/displayNumber";
+import { getTotalIncomesAndExpenses } from "../utils/getTotalIncomesAndExpenses";
 
 const IncomeExpensesSummary = () => {
 
-    const { getSummary } = useContext(GlobalContext);
+    const { transactions } = useContext(GlobalContext);
 
-    const { incomes, expenses } = getSummary();
+    const { incomes, expenses } = getTotalIncomesAndExpenses(transactions);
 
     return (
         <div className="inc-exp-container">
